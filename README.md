@@ -4,7 +4,9 @@
 
 ## デモ
 
-https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/
+https://shiwaku.github.io/plateau-osaka-expo-2025-3d/#16.5/34.648131/135.383125/-20/60
+
+![alt text](image.png)
 
 ## 表示データ
 
