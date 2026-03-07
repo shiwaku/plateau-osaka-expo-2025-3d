@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLATEAU 大阪・関西万博会場 3Dビューア</title>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- タイトル -->
+    <div id="title-panel">
+      <div class="title-main">PLATEAU 大阪・関西万博会場</div>
+      <div class="title-sub">2025年 3D都市モデル ビューア</div>
+    </div>
+
+    <!-- レイヤ制御パネル -->
+    <div id="layer-panel">
+      <div class="panel-title">レイヤ表示</div>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-building" checked />
+        <span class="toggle-color" style="background:#a000ff;"></span>
+        建築物 (Building)
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-installation" checked />
+        <span class="toggle-color" style="background:#ff0080;"></span>
+        建築物付属物 (BuildingInstallation)
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-city-furniture" checked />
+        <span class="toggle-color" style="background:#00ff00;"></span>
+        都市設備・大屋根リング (CityFurniture)
+      </label>
+    </div>
+
+    <!-- ローディング -->
+    <div id="loading">
+      <div class="loading-inner">
+        <div class="spinner"></div>
+        <div id="loading-text">GeoJSONを読み込み中...</div>
+      </div>
+    </div>
+
+    <!-- ポップアップ -->
+    <div id="popup">
+      <div id="popup-header">
+        <span id="popup-title">フィーチャ情報</span>
+        <button id="popup-close">✕</button>
+      </div>
+      <div id="popup-body"></div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
