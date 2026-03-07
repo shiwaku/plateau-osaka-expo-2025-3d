@@ -26,6 +26,9 @@ const findMinZ = (fc: FeatureCollection): number => {
   return minZ === Infinity ? 0 : minZ
 }
 
+// 夢洲の地盤標高（海抜約3m）
+const GROUND_ELEVATION = 3.0
+
 // 全頂点のZ値からオフセットを差し引く
 const shiftZ = (fc: FeatureCollection, offset: number): FeatureCollection => {
   const adjustZ = (pos: Position): Position =>
@@ -84,9 +87,9 @@ const hideLoading = () => { loadingEl.style.display = 'none' }
 setLoadingText('Building.geojson を読み込み中...')
 const buildingRaw = await fetch('https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/geojson/Building.geojson').then(r => r.json()) as FeatureCollection
 
-// Buildingデータの最小Z（地盤の最低点）を全体オフセットとして使用
-const zOffset = findMinZ(buildingRaw)
-console.log(`Z offset (ground base): ${zOffset.toFixed(3)} m`)
+// ジオイド高（最小Z）＋標高（夢洲約3m）を合わせて差し引く
+const zOffset = findMinZ(buildingRaw) + GROUND_ELEVATION
+console.log(`Z offset (geoid + elevation): ${zOffset.toFixed(3)} m`)
 
 const buildingData = shiftZ(buildingRaw, zOffset)
 
