@@ -34,7 +34,7 @@ https://shiwaku.github.io/plateau-osaka-expo-2025-3d/#16.5/34.648131/135.383125/
 | ライブラリ | バージョン | 用途 |
 |---|---|---|
 | [MapLibre GL JS](https://maplibre.org/) | ^5.16.0 | ベースマップ・カメラ制御 |
-| [deck.gl](https://deck.gl/) | ^9.2.5 | 3D GeoJsonLayer（`_full3d: true`）|
+| [deck.gl](https://deck.gl/) | ^9.2.5 | GeoJsonLayer（`_full3d: true`）|
 | [Vite](https://vitejs.dev/) | ^7.3.1 | ビルドツール |
 | TypeScript | ~5.9.3 | 型チェック |
 
