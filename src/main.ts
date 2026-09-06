@@ -104,7 +104,7 @@ const hideLoading = () => {
 // GeoJSON フェッチ
 setLoadingText("Building.geojson を読み込み中...");
 const buildingRaw = (await fetch(
-  "https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/geojson/Building.geojson",
+  "https://shi-works.com/pmtiles/plateau-osaka-expo-2025-3d/geojson/Building.geojson",
 ).then((r) => r.json())) as FeatureCollection;
 
 // ジオイド高（最小Z）＋標高（夢洲約3m）を合わせて差し引く
@@ -116,7 +116,7 @@ const buildingData = shiftZ(buildingRaw, zOffset);
 setLoadingText("BuildingInstallation.geojson を読み込み中... (大容量)");
 const installationData = shiftZ(
   (await fetch(
-    "https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/geojson/BuildingInstallation.geojson",
+    "https://shi-works.com/pmtiles/plateau-osaka-expo-2025-3d/geojson/BuildingInstallation.geojson",
   ).then((r) => r.json())) as FeatureCollection,
   zOffset,
 );
@@ -124,7 +124,7 @@ const installationData = shiftZ(
 setLoadingText("CityFurniture.geojson を読み込み中... (大容量)");
 const cityFurnitureData = shiftZ(
   (await fetch(
-    "https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/geojson/CityFurniture.geojson",
+    "https://shi-works.com/pmtiles/plateau-osaka-expo-2025-3d/geojson/CityFurniture.geojson",
   ).then((r) => r.json())) as FeatureCollection,
   zOffset,
 );
