@@ -69,7 +69,7 @@ const style: StyleSpecification = {
     aerial: {
       type: "raster",
       tiles: [
-        "https://xs489works.xsrv.jp/pmtiles-data/plateau-osaka-expo-2025-3d/tiles/{z}/{x}/{y}.png",
+        "https://shi-works.com/pmtiles/plateau-osaka-expo-2025-3d/tiles/{z}/{x}/{y}.png",
       ],
       tileSize: 256,
       minzoom: 9,
